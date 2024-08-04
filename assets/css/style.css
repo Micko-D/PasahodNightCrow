@@ -1,0 +1,439 @@
+@import url('https://fonts.cdnfonts.com/css/medieval-sharp?styles=17234');
+
+:root {
+    --black-color: #2D2D2D;
+    --gray-color: #C8C6C2;
+    --yellow-color: #DF8D0F;
+    --green-color: #1A8731;
+    --blue-color: #2C3AA4;
+
+    --black-color-trans: #2d2d2dde;
+    --gray-color-trans: #c8c6c2b3;
+    --yellow-color-trans: #df8c0fc5;
+}
+
+body,
+.logos,
+.main-container,
+.calculator,
+.loot-input,
+.entry-item,
+.addmore-entry,
+.entry-holder,
+.calcu-button,
+.menu-item,
+.table-container,
+.total-dis,
+.floating-button {
+    display: flex;
+}
+
+h2,
+h3 {
+    margin: 0px;
+}
+
+body {
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+    background: url("/assets/images/background-image.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Medieval Sharp', sans-serif;
+    color: #fff;
+}
+
+.border {
+    border: 1px solid red;
+}
+
+.nav {
+    width: 230px;
+    height: 350px;
+    background-color: var(--black-color);
+    text-align: center;
+    overflow: hidden;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+.nav {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.logos {
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.my-logo {
+    height: 35px;
+}
+
+.nc-logo {
+    height: 14px;
+}
+
+.menu-item {
+    flex-direction: column;
+}
+
+.menu-item::after {
+    content: "";
+    width: 200px;
+    height: 50px;
+    background-color: var(--yellow-color);
+    position: absolute;
+    z-index: 0;
+    transform: translateY(5px);
+    transition: transform .7s cubic-bezier(.73, .01, .64, .98);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.menu-item.translateCalculate::after {
+    transform: translateY(5px);
+}
+
+.menu-item.translateAbout::after {
+    transform: translateY(62px);
+}
+
+.menu-item h3 {
+    font-size: 16px;
+    padding: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.main-container {
+    width: 900px;
+    height: 80vh;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow-Y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.main-container::-webkit-scrollbar {
+    display: none;
+}
+
+.calculator {
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-color: var(--black-color-trans);
+    border-radius: 20px;
+    padding: 20px 30px;
+}
+
+.entry-holder {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.entry-holder .entry-item {
+    width: 800px;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+input {
+    font-family: 'Medieval Sharp', sans-serif;
+    border-radius: 5px;
+    border: 0;
+    padding: 5px;
+}
+
+.loot-input {
+    flex-direction: row;
+    gap: 15px;
+    width: 230px;
+}
+
+input:focus {
+    outline: none;
+}
+
+#loot {
+    width: 200px;
+}
+
+input[type="number"] {
+    width: 150px;
+}
+
+.delete-entry {
+    cursor: pointer;
+}
+
+.addmore-entry {
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    color: #DF8D0F;
+    cursor: pointer;
+}
+
+.calcu-button {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.calcu-button h3 {
+    display: block;
+    width: fit-content;
+    padding: 10px 30px;
+    background-color: var(--green-color);
+    border-radius: 20px;
+}
+
+.result-item .title {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+    color: var(--black-color);
+}
+
+.div2 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.table-container {
+    flex-direction: column;
+}
+
+.result-item {
+    position: relative;
+    background-color: var(--gray-color-trans);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid var(--black-color);
+    margin: 10px;
+}
+
+.table-loot {
+    border-collapse: collapse;
+}
+
+table.table-loot th,
+table.table-loot-content td {
+    min-width: 100px;
+    max-width: 100px;
+    text-align: center;
+    border: none;
+    padding: 20px;
+    text-shadow: 1px 1px 2px var(--black-color);
+}
+
+table.table-loot-content tr:nth-child(even) {
+    background-color: var(--blue-color);
+}
+
+.table-loot-content {
+    background-color: var(--yellow-color-trans);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.trancute {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.total-dis {
+    width: fit-content;
+    height: fit-content;
+    background-color: #ffff;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0px 20px;
+    border-radius: 10px;
+}
+
+.total-dis p {
+    color: var(--black-color);
+    text-shadow: 1px 2px 5px var(--green-color);
+}
+
+.highlight-text {
+    color: var(--green-color);
+}
+
+.floating-button {
+    height: 50px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #fff;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.about-page {
+    background-color: var(--black-color-trans);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.about-page h2 {
+    color: var(--yellow-color-trans);
+    font-weight: 100;
+}
+
+.about-page p a {
+    text-decoration: none;
+    color: var(--yellow-color);
+}
+
+.about-highlight {
+    color: var(--yellow-color);
+    text-shadow: 1px 1px 3px var(--black-color);
+}
+
+.about-dev {
+    color: var(--yellow-color-trans);
+    font-size: 32px;
+}
+
+
+@media (max-width: 767px) {
+    .nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: block;
+        position: fixed;
+        right: 20px;
+        bottom: 5px;
+    }
+
+    .nc-logo {
+        display: none;
+    }
+
+    .my-logo {
+        height: 50px;
+    }
+
+    .menu-item {
+        position: absolute;
+    }
+
+    .menu-item::after {
+        display: none;
+    }
+
+    .menu-item h3 {
+        color: var(--yellow-color);
+        background-color: var(--black-color);
+        padding: 10px 30px;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .menu-item h3:nth-child(1) {
+        transform: translateY(-130px) translateX(-80px);
+        pointer-events: visible;
+        transition: opacity .3s, transform .6s;
+    }
+
+    .menu-item h3:nth-child(2) {
+        transform: translateY(-110px) translateX(-120px);
+        pointer-events: visible;
+        opacity: 1;
+        transition: opacity .2s, transform .4s;
+    }
+
+    .menu-item h3:nth-child(1).hide {
+        transform: translateY(-90px) translateX(-10px);
+        pointer-events: none;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    .menu-item h3:nth-child(2).hide {
+        transform: translateY(-110px) translateX(-10px);
+        pointer-events: none;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    .main-container {
+        padding: 20px;
+    }
+
+    .loot-input {
+        flex-direction: column;
+    }
+
+    .entry-holder .entry-item {
+        width: 280px;
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    input {
+        width: 200px;
+    }
+
+    input[type="number"] {
+        width: 200px;
+    }
+
+    table.table-loot th,
+    table.table-loot-content td {
+        text-align: center;
+        min-width: 50px;
+        max-width: 50px;
+        padding: 5px;
+        width: 50px;
+        font-size: 12px;
+    }
+
+    .floating-button {
+        right: 0;
+        left: 30px;
+        bottom: 30px;
+    }
+
+    .trancute {
+        max-width: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+
+}

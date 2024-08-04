@@ -1,0 +1,61 @@
+<div class="result-element">
+    <div class="result-item">
+        <div class="title">
+            <div class="div1">
+                <p>Date: 8/2/2024</p>
+            </div>
+            <div class="div2">
+                <h2>Loot: 1350 dias</h2>
+            </div>
+        </div>
+        <div class="table-container">
+            <table class="table-loot">
+                <tr>
+                    <th>Members:</th>
+                    <th>Contribution:</th>
+                    <th>Share:</th>
+                    <th>Salary</th>
+                </tr>
+            </table>
+            <table class="table-loot-content">
+                <tr>
+                    <td>ShadowAngel</td>
+                    <td>Looter</td>
+                    <td>+20%</td>
+                    <td>306</td>
+                </tr>
+                <tr>
+                    <td>WingsAngle</td>
+                    <td>Pointer</td>
+                    <td>+10%</td>
+                    <td>280</td>
+                </tr>
+                <tr>
+                    <td>Kagurashi</td>
+                    <td>N/A</td>
+                    <td>Normal</td>
+                    <td>255</td>
+                </tr>
+                <tr>
+                    <td>Player c</td>
+                    <td>N/A</td>
+                    <td>Normal</td>
+                    <td>255</td>
+                </tr>
+                <tr>
+                    <td>Player d</td>
+                    <td>N/A</td>
+                    <td>Normal</td>
+                    <td>255</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="total-dis">
+        <p>Distributed: <span class="highlight-text">1350 dias</span></p>
+    </div>
+
+    <div onclick="saveElementAsImage('.result-element')" class="floating-button">
+        <i class="fa-solid fa-download fa-xl" style="color: #2D2D2D;"></i>
+    </div>
+</div>
