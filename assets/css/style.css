@@ -393,6 +393,10 @@ table.table-loot-content tr:nth-child(even) {
         padding: 20px;
     }
 
+    .div2{
+        width: 300px;
+    }
+
     .loot-input {
         flex-direction: column;
     }
