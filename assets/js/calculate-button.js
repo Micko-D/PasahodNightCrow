@@ -7,6 +7,13 @@ function validateShare(input) {
     }
 }
 
+function validateLoot(input) {
+    var value = parseInt(input.value);
+    if (value < 1) {
+        input.value = 1;
+    }
+}
+
 var resultData;
 
 function calculateEntry() {
@@ -16,10 +23,10 @@ function calculateEntry() {
 
     var specialMember = 0;
 
-    entryItems.forEach(function(entryItem) {
+    entryItems.forEach(function (entryItem) {
         var share = parseInt(entryItem.querySelector('input[name="share"]').value) || 0;
         if (share > 0) {
-            specialMember += (share/100)
+            specialMember += (share / 100)
         }
     });
 
@@ -32,14 +39,14 @@ function calculateEntry() {
 
     var totalDistributed = 0;
 
-    entryItems.forEach(function(entryItem) {
+    entryItems.forEach(function (entryItem) {
         var member = entryItem.querySelector('input[name="member"]').value || "N/A";
         var contribution = entryItem.querySelector('input[name="contribution"]').value || "N/A";
         var share = parseInt(entryItem.querySelector('input[name="share"]').value) || 0;
         var salary = 0;
         if (share > 0) {
-            salary = parseInt((1 + (share/100)) * baseSalary);
-        }else{
+            salary = parseInt((1 + (share / 100)) * baseSalary);
+        } else {
             salary = baseSalary
         }
 
