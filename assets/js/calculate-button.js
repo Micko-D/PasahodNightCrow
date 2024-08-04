@@ -14,17 +14,19 @@ function calculateEntry() {
     var entryItems = document.querySelectorAll('.entry-item');
     var numMembers = parseInt(entryItems.length);
 
-    var noShareMember = 0;
+    var specialMember = 0;
 
     entryItems.forEach(function(entryItem) {
         var share = parseInt(entryItem.querySelector('input[name="share"]').value) || 0;
-        if (share == 0) {
-            noShareMember += 0.1
+        if (share > 0) {
+            specialMember += (share/100)
         }
     });
 
 
-    var baseSalary = parseInt(loot / (numMembers + noShareMember));
+    var baseSalary = parseInt(loot / (numMembers + specialMember));
+
+    console.log(`basalary:${baseSalary}`)
 
     resultData = { "data": [{ loot: loot }] };
 
