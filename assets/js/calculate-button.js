@@ -33,7 +33,6 @@ function calculateEntry() {
 
     var baseSalary = parseInt(loot / (numMembers + specialMember));
 
-    console.log(`basalary:${baseSalary}`)
 
     resultData = { "data": [{ loot: loot }] };
 

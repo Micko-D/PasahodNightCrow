@@ -43,9 +43,22 @@ function menuSelector(item) {
     }
 }
 
+function getCurrentFormattedDate() {
+    let date = new Date();
+    let mm = date.getMonth() + 1; // getMonth() is zero-based
+    let dd = date.getDate();
+    let yy = date.getFullYear()
+
+    // Add leading zero if necessary
+    mm = (mm < 10) ? '0' + mm : mm;
+    dd = (dd < 10) ? '0' + dd : dd;
+
+    return `${mm}/${dd}/${yy}`;
+}
 
 function updateResultData(resultData) {
-    // Update the Loot
+    // Update the Loot/Date
+    document.querySelector('.result-item .title .div1 p').textContent = `Date: ${getCurrentFormattedDate()}`;
     document.querySelector('.result-item .title .div2 h2').textContent = `Loot: ${resultData.data[0].loot} dias`;
 
     // Update the table content

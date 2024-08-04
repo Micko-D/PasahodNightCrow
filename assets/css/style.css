@@ -334,6 +334,7 @@ table.table-loot-content tr:nth-child(even) {
     .mobile-nav {
         display: block;
         position: fixed;
+        z-index: 1;
         right: 20px;
         bottom: 5px;
     }
