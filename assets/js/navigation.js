@@ -1,5 +1,20 @@
+document.addEventListener('DOMContentLoaded', function () {
+    loadHTML('nav', 'pages/template/navigation-menu.html');
+    loadHTML('mobile-nav', 'pages/template/navigation-menu.html');
+    loadHTML('main-container', 'pages/calculate_page/calculate.html');
+});
+
+function loadHTML(elementId, filePath) {
+    fetch(filePath)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById(elementId).innerHTML = data;
+        })
+        .catch(error => console.error('Error loading content:', error));
+}
+
 function loadContent(page) {
-    fetch(`pages/${page}_page/${page}.php`)
+    fetch(`pages/${page}_page/${page}.html`)
         .then(response => response.text())
         .then(data => {
             document.querySelector('.main-container').innerHTML = data;
@@ -96,7 +111,7 @@ document.querySelectorAll('.menu-item h3').forEach(header => {
 });
 
 // Attach the toggleMenu function to the logo click event
-document.querySelector('.my-logo').addEventListener('click', function(event) {
+document.querySelector('.my-logo').addEventListener('click', function (event) {
     // Prevent the click from propagating to the document
     event.stopPropagation();
     toggleMenu();

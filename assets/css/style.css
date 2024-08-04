@@ -272,6 +272,7 @@ table.table-loot-content tr:nth-child(even) {
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    margin-left: 10px;
     padding: 0px 20px;
     border-radius: 10px;
 }
